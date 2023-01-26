@@ -20,22 +20,29 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api/:timestamp', function (req, res) {
-	const date = new Date(req.params.timestamp);
-	const isDate = date instanceof Date && !isNaN(date.valueOf());
+	const { timestamp } = req.params;
 
-	if (!isDate) {
-		res.json({ unix: null, utc: null });
-		return;
-	}
+  if (/^\d*$/.test(timestamp) && timestamp.length === 13) {
+    const date = new Date(parseInt(timestamp));
+  	res.json({ unix: date.valueOf(), utc: date.toUTCString() });
+    return;
+  }
 
-	res.json({ unix: date.valueOf(), utc: date.toUTCString() });
+	const date = new Date(timestamp);
+	if (date instanceof Date && !isNaN(date.valueOf())) {
+    res.json({ unix: date.valueOf(), utc: date.toUTCString() });
+    return;
+  };
+
+  res.json({ unix: null, utc: null });
 });
 
 app.get('*', function (req, res) {
 	res.send('Oh no! Nothing found');
 });
 
-const listener = app.listen(5173, function () {
+const port = process.env.PORT || 5173;
+
+const listener = app.listen(port, function () {
 	console.log(`Listening: http://localhost:${listener.address().port}`);
-	// console.log('Your app is listening on port ' + listener.address().port);
 });
