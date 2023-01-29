@@ -1,6 +1,6 @@
-import handler from '../handler/shortener.handler.js';
+import handler from './db/handler.js';
 
-import { hasProtocol, lookupDns } from '../middleware/shortener.middleware.js';
+import { hasProtocol, lookupDns } from './middleware.js';
 
 const validResponse = (referer, entry) => ({
 	...entry,
@@ -19,12 +19,12 @@ const post = async (req, res) => {
 		return;
 	}
 
-	const lookup = await lookupDns(url);
+	// const lookup = await lookupDns(url);
 
-	if (lookup.error) {
-		res.json(lookup);
-		return;
-	}
+	// if (lookup.error) {
+	// 	res.json(lookup);
+	// 	return;
+	// }
 
 	const newEntry = await handler.addEntry(url);
 	res.json(validResponse(referer, newEntry));

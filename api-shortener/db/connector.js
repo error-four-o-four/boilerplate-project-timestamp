@@ -1,6 +1,6 @@
 import { JsonDB, Config } from 'node-json-db';
 
-const dbFile = './json-dbs/short-urls';
+const dbFile = './api-shortener/db/db';
 const db = new JsonDB(new Config(dbFile));
 
 const root = await db.getData('/');

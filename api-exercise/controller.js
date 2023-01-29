@@ -1,5 +1,5 @@
 import validator from 'validator';
-import handler from '../handler/exercise.handler.js';
+import handler from './db/handler.js';
 
 const createUser = async (req, res) => {
 	const name = validator.escape(req.body.username);
@@ -15,18 +15,18 @@ const getAllUsers = async (req, res) => {
 };
 
 const postExercise = async (req, res) => {
-	const uid = req.body[':_id'];
+	const uid = req.params['_id'];
 
 	const data = ['description', 'duration', 'date'].reduce((all, key) => {
 		return {
 			...all,
-			[key]: validator.escape(req.body[key]),
+			[key]: (req.body[key]) ? validator.escape(req.body[key]) : null,
 		};
 	}, {});
 
 	const { description } = data;
 	const duration = parseInt(data.duration);
-	const date = new Date(data.date).toDateString();
+	const date = (data.date) ? new Date(data.date).toDateString() : new Date().toDateString();
 
 	await handler.addEntry(uid, description, duration, date);
 

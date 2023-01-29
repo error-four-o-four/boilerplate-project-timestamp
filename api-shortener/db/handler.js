@@ -1,4 +1,4 @@
-import db from './shortener.connector.js';
+import db from './connector.js';
 
 const objEntry = (index) => ({
 	original_url: db.data.entries[index],

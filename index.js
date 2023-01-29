@@ -3,10 +3,11 @@ import cors from 'cors';
 
 import { __dirname, port } from './config.js';
 
-import timestampRoute from './routes/timestamp.route.js';
+import timestampRoute from './api-timestamp/routes.js';
+import shortenerRoute from './api-shortener/routes.js';
+import exerciseRoute from './api-exercise/routes.js';
+
 import whoamiRoute from './routes/whoami.route.js';
-import shortenerRoute from './routes/shortener.route.js';
-import exerciseRoute from './routes/exercise.route.js';
 import metadataRoute from './routes/metadata.route.js';
 
 const app = express();
