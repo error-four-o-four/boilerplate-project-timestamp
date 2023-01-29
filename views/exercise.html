@@ -30,13 +30,7 @@
 			<form id="exercise-form" method="post">
 				<h3>Add Exercises</h3>
 				<p><code>POST /api/users/:_id/exercises</code></p>
-				<input
-					id="uid"
-					type="text"
-					name=":_id"
-					placeholder=":_id"
-					pattern="\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b"
-					required />
+				<input id="uid" type="text" name=":_id" placeholder=":_id" pattern="\b[0-9a-f]{24}\b" required />
 				<input
 					id="desc"
 					type="text"
