@@ -1,11 +1,12 @@
 import dns from 'node:dns';
-import dnsPromise from 'node:dns/promises';
+// import dnsPromise from 'node:dns/promises';
 import bodyParser from 'body-parser';
 import { Router } from 'express';
 
 import { __dirname } from '../config.js';
 import { addEntry, getUrl, getEntry } from '../controller/shortener.handler.js';
 
+const dnsPromise = dns.promises;
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const regexUrl = new RegExp(
