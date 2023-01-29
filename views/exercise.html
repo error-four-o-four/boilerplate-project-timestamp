@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>FCC Microservices</title>
+		<!-- <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/> -->
+		<link href="../style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<header>
+			<h1>Exercise Tracker</h1>
+		</header>
+
+		<main>
+			<form id="user-form" method="post">
+				<h3>Create a New User</h3>
+				<p><code>POST /api/users</code></p>
+				<input
+					id="uname"
+					type="text"
+					name="username"
+					placeholder="username"
+					pattern="^[A-Za-z0-9_\-]+$"
+					minlength="3"
+					required />
+				<input type="submit" value="Submit" />
+			</form>
+
+			<form id="exercise-form" method="post">
+				<h3>Add Exercises</h3>
+				<p><code>POST /api/users/:_id/exercises</code></p>
+				<input
+					id="uid"
+					type="text"
+					name=":_id"
+					placeholder=":_id"
+					pattern="\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b"
+					required />
+				<input
+					id="desc"
+					type="text"
+					name="description"
+					placeholder="description*"
+					pattern="^[A-Za-z0-9\s\.]+$"
+					required />
+				<input id="dur" type="number" name="duration" placeholder="duration* (mins.)" pattern="^\d+$" required />
+				<input id="date" type="date" name="date" pattern="\d{4}-\d{2}-\d{2}" />
+				<input type="submit" value="Submit" />
+			</form>
+
+			<h3>Get User's Exercise Log</h3>
+			<p>
+				<code>GET /api/users/:_id/logs?[from][&amp;to][&amp;limit]</code>
+			</p>
+			<p><strong>[ ]</strong> = optional</p>
+			<p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
+
+			<h3>Registered Users</h3>
+			<ul id="users"></ul>
+			<script type="module" src="../exercise.js"></script>
+		</main>
+	</body>
+</html>

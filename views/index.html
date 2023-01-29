@@ -1,32 +1,76 @@
 <!DOCTYPE html>
 
 <html>
-   <head>
-      <title>Timestamp Microservice | freeCodeCamp.org</title>
-      <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
-   </head>
+	<head>
+		<title>FCC Microservices</title>
+		<!-- <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/> -->
+		<link href="style.css" rel="stylesheet" type="text/css" />
+	</head>
 
-   <body>
-    <h1>Timestamp Microservice</h1>
-    <hr />
-    <div class="container">
-      <h3>Example Usage:</h3>
-      <ul>
-        <li><a href="api/2015-12-25">[project url]/api/2015-12-25</a></li>
-        <li><a href="api/1451001600000">[project url]/api/1451001600000</a></li>
-      </ul>
+	<body>
+		<header>
+			<h1>freeCodeCamp API Challenges</h1>
+		</header>
 
-      <h3>Example Output:</h3>
-      <p>
-        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
-      </p>
-    </div>
-    <div class="footer">
-      <p>
-        By <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a>
-      </p>
-    </div>
-  </body>
+		<main>
+			<article>
+				<h2>Timestamp Microservice</h2>
+				<h3>Example Usage:</h3>
+				<p>
+					<a href="./timestamp/api/2015-12-25">timestamp/api/2015-12-25</a><br />
+					<a href="./timestamp/api/1451001600000">timestamp/api/1451001600000</a>
+				</p>
+
+				<h3>Example Output:</h3>
+				<p>
+					<code>{ "unix" : 1451001600000, "utc" : "Fri, 25 Dec 2015 00:00:00 GMT" }</code>
+				</p>
+			</article>
+
+			<article>
+				<h2>Request Header Parser Microservice</h2>
+				<h3>Example Usage:</h3>
+
+				<p>
+					<a href="./whoami/api/whoami">/whoami/api/whoami</a>
+				</p>
+
+				<h3>Example Output:</h3>
+
+				<pre>
+{
+    "ipaddress" : "::ffff:159.20.14.100",
+    "language" : "en-US,en;q=0.5",
+    "software" : "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+}
+</pre
+				>
+			</article>
+
+			<article>
+				<h2>URL Shortener Microservice</h2>
+				<p>Use the form at <a href="./shortener/">/shortener/</a></p>
+
+				<h3>Example Output:</h3>
+				<p>
+					<code>{ original_url: "https://www.google.com", short_url: 1 }</code>
+				</p>
+			</article>
+
+			<article>
+				<h2>Exercise Tracker</h2>
+				<p>Use the form at <a href="./exercise/">/exercise/</a></p>
+			</article>
+
+			<article>
+				<h2>File Metadata</h2>
+				<p>Use the form at <a href="./metadata/">/metadata/</a></p>
+
+				<h3>Example Output:</h3>
+				<p>
+					<code>{ name: test.txt, type: plain/text, size: 9999 }</code>
+				</p>
+			</article>
+		</main>
+	</body>
 </html>

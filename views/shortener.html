@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>FCC Microservices</title>
+		<!-- <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/> -->
+		<link href="../style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<header>
+			<h1>URL Shortener</h1>
+		</header>
+
+		<main>
+				<form id="shortener" action="api/shorturl" method="POST">
+					<label for="url_input">URL:</label>
+					<input id="url_input" type="text" name="url" placeholder="https://www.freecodecamp.org/" />
+					<input type="submit" value="POST URL" />
+				</form>
+		</main>
+	</body>
+</html>

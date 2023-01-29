@@ -1,0 +1,16 @@
+{
+	"users": [
+		{ "_id": "53a0b449-f253-41f2-980d-461fc28ef2c7", "username": "peter" },
+		{ "_id": "19c16822-7dee-4042-8d70-921b3714162e", "username": "hannes" }
+	],
+	"entries": {
+		"53a0b449-f253-41f2-980d-461fc28ef2c7": [
+			{ "description": "test 1", "duration": 10, "unix": 1674864000000, "date": "Sat Jan 28 2023" }
+		],
+		"19c16822-7dee-4042-8d70-921b3714162e": [
+			{ "description": "test one", "duration": 1, "unix": 1643328000000, "date": "Fri Jan 28 2022" },
+			{ "description": "test two", "duration": 2, "unix": 1611792000000, "date": "Thu Jan 28 2021" },
+			{ "description": "test three", "duration": 3, "unix": 1674864000000, "date": "Sat Jan 28 2023" }
+		]
+	}
+}

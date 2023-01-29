@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>FCC Microservices</title>
+		<!-- <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/> -->
+		<link href="../style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<header>
+			<h1>File Metadata</h1>
+		</header>
+
+		<main>
+			<p>Please Upload a File ...</p>
+			<!-- <form enctype="multipart/form-data" method="POST" action="./api/fileanalyse"> -->
+			<form method="POST" action="./api/fileanalyse">
+				<input id="inputfield" type="file" name="upfile" />
+				<input id="inputdata" type="hidden" name="data" value="" />
+				<input id="button" type="submit" value="Upload" />
+			</form>
+		</main>
+
+		<script type="module" src="../metadata.js"></script>
+	</body>
+</html>
